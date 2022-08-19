@@ -1,30 +1,11 @@
 "use strict";
-class BancoDeDados {
-    ip;
-    usuario;
-    senha;
-    tipoBanco;
-    static LOCAL = '127.0.0.1';
-    static TIPO_MYSQL = 'MySQL';
-    static TIPO_SQLSERVER = 'SQL Server';
-    constructor(ip, usuario, senha, tipoBanco) {
-        this.ip = ip;
-        this.usuario = usuario;
-        this.senha = senha;
-        this.tipoBanco = tipoBanco;
-    }
-    static factory(parametros) {
-        if (![BancoDeDados.TIPO_MYSQL, BancoDeDados.TIPO_SQLSERVER].includes(parametros.tipoBanco)) {
-            throw new Error('Tipo de banco incorreto!');
-        }
-        return new BancoDeDados(parametros.ip, parametros.usuario, parametros.senha, parametros.tipoBanco);
-    }
-}
-const conexaoBanco = BancoDeDados.factory({
-    tipoBanco: BancoDeDados.TIPO_SQLSERVER,
+Object.defineProperty(exports, "__esModule", { value: true });
+const BancoDeDados_1 = require("../7_Modulos/classes/BancoDeDados");
+const conexaoBanco = BancoDeDados_1.BancoDeDados.factory({
+    tipoBanco: BancoDeDados_1.BancoDeDados.TIPO_SQLSERVER,
     senha: '654321',
     usuario: 'root',
-    ip: BancoDeDados.LOCAL
+    ip: BancoDeDados_1.BancoDeDados.LOCAL
 });
 console.log(conexaoBanco);
 //# sourceMappingURL=classe_prop_metodo_estatico.js.map

@@ -1,7 +1,5 @@
-function mostrarMensagem(texto: string | number): boolean{
-    console.log(texto)
-    return true
-}
+import  mostrarMensagem  from "../7_Modulos/funcoes/mostrarMensagem"
+
 
 console.log(mostrarMensagem('Hcode!'))
 console.log(mostrarMensagem(21))
